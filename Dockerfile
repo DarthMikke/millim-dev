@@ -1,6 +1,6 @@
 FROM httpd:2.4-alpine
 
-RUN apk add openssh git
+RUN apk add openssh git python3 nodejs
 
 # Kopier tilgangsnøkkelen til Git-repoet
 RUN mkdir /root/.ssh
@@ -16,4 +16,5 @@ VOLUME [ "/srv" ]
 RUN echo "IncludeOptional /srv/portfolio/apache/*.conf" >> /usr/local/apache2/conf/httpd.conf
 
 COPY ./scripts/* /scripts/
-CMD scripts/run.sh
+RUN chmod +x /scripts/*
+CMD /scripts/run.sh
