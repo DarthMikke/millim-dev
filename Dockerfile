@@ -1,6 +1,6 @@
 FROM httpd:2.4-alpine
 
-RUN apk add openssh git python3 nodejs
+RUN apk add openssh git python3 nodejs apache2-mod-wsgi
 
 # Kopier tilgangsnøkkelen til Git-repoet
 RUN mkdir /root/.ssh
@@ -14,6 +14,7 @@ VOLUME [ "/srv" ]
 
 # Inkluder httpd-konfigurasjonen frå git-repoet
 RUN echo "IncludeOptional /srv/portfolio/apache/*.conf" >> /usr/local/apache2/conf/httpd.conf
+RUN echo "LoadModule wsgi_module /usr/lib/apache2/mod_wsgi.so" >> /usr/local/apache2/conf/httpd.conf
 
 COPY ./scripts/* /scripts/
 RUN chmod +x /scripts/*
