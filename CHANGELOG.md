@@ -10,6 +10,12 @@ _for utviklingsmiljøet for Millim_
 ### Retta (Fixed)
 ### Tryggleik (Security)
 
+## [0.0.5] - ikkje sluppe
+
+### Lagt til (Added)
+
+- Fjern gamal Apache-konfigurasjon ved omstart
+
 ## [0.0.4] - 2023-05-18
 
 ### Lagt til
