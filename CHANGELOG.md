@@ -10,11 +10,12 @@ _for utviklingsmiljøet for Millim_
 ### Retta (Fixed)
 ### Tryggleik (Security)
 
-## [0.0.4] - 2023-05-17
+## [0.0.4] - 2023-05-18
 
 ### Lagt til
 
 - Logg når Apache-konfigurasjonen blir oppretta
+- Skript for å køyre kontaineren
 - Changelog
 
 ### Retta
