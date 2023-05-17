@@ -18,3 +18,5 @@ RUN echo "IncludeOptional /srv/portfolio/apache/*.conf" >> /usr/local/apache2/co
 COPY ./scripts/* /scripts/
 RUN chmod +x /scripts/*
 CMD /scripts/run.sh
+
+EXPOSE 22
