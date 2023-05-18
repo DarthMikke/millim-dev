@@ -14,8 +14,11 @@ _for utviklingsmiljøet for Millim_
 
 ### Lagt til (Added)
 
+- WSGI
+- Opna port 22
+
+### Endra (Changed)
 - Fjern gamal Apache-konfigurasjon ved omstart
-- Gjer det mogleg å rulle ut endringar med Ansible
 
 ## [0.0.4] - 2023-05-18
 
