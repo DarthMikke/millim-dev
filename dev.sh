@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 if [ -z `cat ./portfolio-path 2> /dev/null` ]
+then
 echo "portfolio-path er tom."
 exit 1
 fi
