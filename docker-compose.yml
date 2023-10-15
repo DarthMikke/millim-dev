@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  devbox:
+    image: millim.no/devbox:0.1.0
+    build:
+      context: "./"
+      args:
+        SERVE_GIT: ${SERVE_GIT}
+        SERVE_BRANCH: ${SERVE_BRANCH}
+        SERVE_DIR: ${SERVE_DIR}
+        CONF_GIT: ${CONF_GIT}
+        CONF_BRANCH: ${CONF_BRANCH}
+        CONF_DIR: ${CONF_DIR}
+    env_file: stack.env
+    volumes:
+      - "${SERVE_DIR}:/srv/portfolio"
+      - "${CONF_DIR}:/srv/apache"
+    ports:
+      - 80:80
+      - 443:443

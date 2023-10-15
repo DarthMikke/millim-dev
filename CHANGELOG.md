@@ -10,12 +10,18 @@ _for utviklingsmiljøet for Millim_
 ### Retta (Fixed)
 ### Tryggleik (Security)
 
-## [0.0.5] - ikkje sluppe
+## [1.0.0] - 2023-10-15
+
+### Lagt til
+- Bruk git-repo for httpd-konfigurasjon
+
+### Endra
+- Bruk docker-compose i staden for levetidsskript
+
+## [0.0.5] - 2023-05-23
 
 ### Lagt til (Added)
-
 - WSGI
-- Opna port 22
 
 ### Endra (Changed)
 - Fjern gamal Apache-konfigurasjon ved omstart
