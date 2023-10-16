@@ -16,7 +16,7 @@ else:
 
 print("Add github to .known_hosts")
 try:
-    with open("/root/.ssh/known_hosts", 'x') as fh:
+    with open("/root/.ssh/known_hosts", 'w') as fh:
         res = subprocess.run(
             ["ssh-keyscan", "-t", "rsa", "github.com"],
             stdout=fh
