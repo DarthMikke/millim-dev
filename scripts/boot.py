@@ -41,25 +41,25 @@ if not os.path.exists(f"{PORTFOLIO}/.git"):
         print(e)
         exit(1)
 
-os.chdir(PORTFOLIO)
-print(f"Checking out branch {os.environ['SERVE_BRANCH']}.")
-try:
-    res = subprocess.run(
-        ["git", "checkout", os.environ['SERVE_BRANCH']])
-    res.check_returncode()
-except Exception as e:
-    print(e)
-    exit(2)
+    os.chdir(PORTFOLIO)
+    print(f"Checking out branch {os.environ['SERVE_BRANCH']}.")
+    try:
+        res = subprocess.run(
+            ["git", "checkout", os.environ['SERVE_BRANCH']])
+        res.check_returncode()
+    except Exception as e:
+        print(e)
+        exit(2)
 
-print(f"Initiating submodules.")
-try:
-    res = subprocess.run(
-        ["git", "submodule", "update", "--init", "--recursive"]
-    )
-    res.check_returncode()
-except Exception as e:
-    print(e)
-    exit(5)
+    print(f"Initiating submodules.")
+    try:
+        res = subprocess.run(
+            ["git", "submodule", "update", "--init", "--recursive"]
+        )
+        res.check_returncode()
+    except Exception as e:
+        print(e)
+        exit(5)
 
 
 # Check if the configs dir exists
@@ -74,12 +74,12 @@ if not os.path.exists(f"{CONFIG}/.git"):
         print(e)
         exit(3)
 
-os.chdir("/srv/apache")
-print(f"Checking out branch {os.environ['CONF_BRANCH']}.")
-try:
-    res = subprocess.run(
-        ["git", "checkout", os.environ['CONF_BRANCH']])
-    res.check_returncode()
-except Exception as e:
-    print(e)
-    exit(4)
+    os.chdir("/srv/apache")
+    print(f"Checking out branch {os.environ['CONF_BRANCH']}.")
+    try:
+        res = subprocess.run(
+            ["git", "checkout", os.environ['CONF_BRANCH']])
+        res.check_returncode()
+    except Exception as e:
+        print(e)
+        exit(4)
