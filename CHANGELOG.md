@@ -1,14 +1,10 @@
 # Endringslogg
 _for utviklingsmiljøet for Millim_
 
-## [Ikkje sluppe]
+## [2.0.0] - 2023-10-16
 
-### Lagt til (Added)
-### Endra (Changed)
-### Utgått (Deprecated)
-### Fjerna (Removed)
-### Retta (Fixed)
-### Tryggleik (Security)
+### Lagt til
+- Forenkla deployment
 
 ## [1.0.0] - 2023-10-15
 
