@@ -2,4 +2,4 @@ Host github.com
   User git
   Hostname github.com
   PreferredAuthentications publickey
-  IdentityFile /root/.ssh/github.key
+  IdentityFile /ssh/github.key
