@@ -5,6 +5,10 @@ services:
     env_file: "stack.env"
     build: "./"
     volumes:
+      # - "/your/path/to/files:/srv/portfolio"
+      # - "/your/path/to/config/files:/srv/apache"
+      # - "/etc/certbot/live/example.com:/srv/certs"
+      # - "/home/user/.ssh:/ssh"  # Where you placed github.key
       - "srv:/srv"
       - "ssh:/ssh"
     pull_policy: build
