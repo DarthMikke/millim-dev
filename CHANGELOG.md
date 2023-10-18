@@ -1,6 +1,11 @@
 # Endringslogg
 _for utviklingsmiljøet for Millim_
 
+## [2.0.1] - 2023-10-18
+
+### Endra (Changed)
+- Dokumentasjon i docker-compose.yml
+
 ## [2.0.0] - 2023-10-16
 
 ### Lagt til
