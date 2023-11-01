@@ -24,7 +24,8 @@ try:
     res.check_returncode()
 except Exception as e:
     print(e)
-    exit(11)
+    print("Exception when adding github to .known_hosts. "
+          "Do you have internet connection?")
 
 PORTFOLIO = '/srv/portfolio'
 CONFIG = '/srv/apache'
@@ -83,3 +84,5 @@ if not os.path.exists(f"{CONFIG}/.git"):
     except Exception as e:
         print(e)
         exit(4)
+
+# TODO: Crawl through {PORTFOLIO} and install Python dependencies.
