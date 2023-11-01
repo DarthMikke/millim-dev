@@ -1,6 +1,13 @@
 # Endringslogg
 _for utviklingsmiljøet for Millim_
 
+## [2.1.0] - 2023-11-01
+
+### Lagt til (Added)
+- Pip, nyaste versjon
+### Retta (Fixed)
+- Kan køyre utan internett-tilgang
+
 ## [2.0.1] - 2023-10-18
 
 ### Endra (Changed)
