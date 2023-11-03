@@ -1,2 +1,2 @@
 cd /scripts/
-python3 boot.py && httpd-foreground
+python3 init.py && httpd-foreground
