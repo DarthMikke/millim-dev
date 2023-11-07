@@ -40,5 +40,6 @@ for project_path in projects:
         print("$ " + ' '.join(command))
         os.chdir(project_path)
         res = subprocess.run(
-            command
+            command, capture_output=True
         )
+        print(res.stdout.decode())
