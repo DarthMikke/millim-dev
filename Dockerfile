@@ -1,6 +1,6 @@
 FROM httpd:2.4-alpine
 
-RUN apk add openssh git bash python3 py3-pip nodejs apache2-mod-wsgi
+RUN apk add openssh git bash python3 py3-pip nodejs apache2-mod-wsgi graphviz
 
 # Kopier tilgangsnøkkelen til Git-repoet
 RUN mkdir /root/.ssh
