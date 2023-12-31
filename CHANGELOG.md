@@ -1,6 +1,14 @@
 # Endringslogg
 _for utviklingsmiljøet for Millim_
 
+## [2.2.0] - 2024-01-01
+
+### Lagt til
+- Køyr setup-scripts ved oppstart, om dei ligg i prosjektmappene.
+
+### Endra
+- Berre set opp git-repo om stiane er definerte som env-variablar.
+
 ## [2.1.0] - 2023-11-01
 
 ### Lagt til (Added)
