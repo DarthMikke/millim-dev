@@ -34,8 +34,8 @@ WEBROOT = '/srv/portfolio'
 CONFIG = '/srv/apache'
 
 # Check if the served files dir exists
-if not os.path.exists(f"{PORTFOLIO}/.git"):
-    print("Portfolio directory does not exist, setting up.")
+if 'SERVE_GIT' in os.environ and not os.path.exists(f"{WEBROOT}/.git"):
+    print("Webroot directory does not exist, setting up.")
     try:
         res = subprocess.run(
             ["git", "clone", os.environ['SERVE_GIT'], WEBROOT]
@@ -69,7 +69,7 @@ else:
 
 
 # Check if the configs dir exists
-if not os.path.exists(f"{CONFIG}/.git"):
+if 'CONF_GIT' in os.environ and not os.path.exists(f"{CONFIG}/.git"):
     print("Config directory does not exist, setting up.")
     try:
         res = subprocess.run(
