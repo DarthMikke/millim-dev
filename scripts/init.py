@@ -22,10 +22,12 @@ try:
             stdout=fh
         )
     res.check_returncode()
+    print("Done.")
 except Exception as e:
     print(e)
     print("Exception when adding github to .known_hosts. "
           "Do you have internet connection?")
+    print("Continuing.")
 
 PORTFOLIO = '/srv/portfolio'
 CONFIG = '/srv/apache'
@@ -61,6 +63,8 @@ if not os.path.exists(f"{PORTFOLIO}/.git"):
     except Exception as e:
         print(e)
         exit(5)
+else:
+    print("Skipping setup of webroot git repo.")
 
 
 # Check if the configs dir exists
@@ -84,5 +88,5 @@ if not os.path.exists(f"{CONFIG}/.git"):
     except Exception as e:
         print(e)
         exit(4)
-
-# TODO: Crawl through {PORTFOLIO} and install Python dependencies.
+else:
+    print("Skipping setup of config git repo.")
