@@ -29,7 +29,8 @@ except Exception as e:
           "Do you have internet connection?")
     print("Continuing.")
 
-PORTFOLIO = '/srv/portfolio'
+# @TODO: Change the WEBROOT path.
+WEBROOT = '/srv/portfolio'
 CONFIG = '/srv/apache'
 
 # Check if the served files dir exists
@@ -37,14 +38,14 @@ if not os.path.exists(f"{PORTFOLIO}/.git"):
     print("Portfolio directory does not exist, setting up.")
     try:
         res = subprocess.run(
-            ["git", "clone", os.environ['SERVE_GIT'], PORTFOLIO]
+            ["git", "clone", os.environ['SERVE_GIT'], WEBROOT]
         )
         res.check_returncode()
     except Exception as e:
         print(e)
         exit(1)
 
-    os.chdir(PORTFOLIO)
+    os.chdir(WEBROOT)
     print(f"Checking out branch {os.environ['SERVE_BRANCH']}.")
     try:
         res = subprocess.run(
