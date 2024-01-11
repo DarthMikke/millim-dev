@@ -13,7 +13,7 @@ VOLUME [ "/srv" ]
 
 # Inkluder httpd-konfigurasjonen frå git-repoet
 RUN echo "LoadModule ssl_module /usr/local/apache2/modules/mod_ssl.so" >> /usr/local/apache2/conf/httpd.conf
-RUN echo "LoadModule wsgi_module /usr/lib/apache2/modules/mod_wsgi.so" >> /usr/local/apache2/conf/httpd.conf  # Ja, denne modulen ligg i ei anna mappe.
+RUN echo "LoadModule wsgi_module /usr/lib/apache2/mod_wsgi.so" >> /usr/local/apache2/conf/httpd.conf  # Ja, denne modulen ligg i ei anna mappe.
 RUN echo "LoadModule rewrite_module /usr/local/apache2/modules/mod_rewrite.so" >> /usr/local/apache2/conf/httpd.conf
 RUN echo "IncludeOptional /srv/apache/*.conf" >> /usr/local/apache2/conf/httpd.conf
 
