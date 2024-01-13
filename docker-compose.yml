@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   devbox:
-    image: millim.no/devbox:2.2.0-a3
+    image: millim.no/devbox:2.2.0-a4
     env_file: "stack.env"
     build: "./"
     volumes:
