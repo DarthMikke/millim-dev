@@ -1,8 +1,7 @@
 version: "3.8"
 services:
   devbox:
-    image: millim.no/devbox:2.2.0-a4
-    env_file: "stack.env"
+    image: millim.no/devbox:2.2.0-a5
     build: "./"
     volumes:
       # - "/your/path/to/files:/srv/portfolio"
