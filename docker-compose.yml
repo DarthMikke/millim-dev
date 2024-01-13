@@ -12,6 +12,7 @@ services:
       - "srv:/srv"
       - "ssh:/ssh"
     pull_policy: build
+    restart: always
     ports:
       - 80:80
       - 443:443
