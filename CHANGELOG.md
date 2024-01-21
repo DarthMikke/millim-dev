@@ -1,13 +1,15 @@
 # Endringslogg
 _for utviklingsmiljøet for Millim_
 
-## [2.2.0] - 2024-01-01
+## [2.2.0] - Ikkje sloppe
 
 ### Lagt til
 - Køyr setup-scripts ved oppstart, om dei ligg i prosjektmappene.
+- Httpd-modular: ssl, rewrite, proxy, proxy_http.
 
 ### Endra
 - Berre set opp git-repo om stiane er definerte som env-variablar.
+- Basis-konfigurasjonsfil for httpd.
 
 ## [2.1.0] - 2023-11-01
 
