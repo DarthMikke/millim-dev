@@ -3,7 +3,6 @@
 import os
 import subprocess
 import glob
-import time
 
 PORTFOLIO = '/srv/portfolio'
 
@@ -34,8 +33,8 @@ for project_path in projects:
         interpreter = None
         (_, ext) = os.path.splitext(setup)
         # TODO: Executable from the shebang
-        command = ['sh'] if ext == 'sh' else ['python'] \
-            if ext == 'py' else []
+        command = ['sh'] if ext == '.sh' else ['python'] \
+            if ext == '.py' else []
         command.append(setup)
         print("$ " + ' '.join(command))
         os.chdir(project_path)
