@@ -1,8 +1,14 @@
-# millim-dev
+# millim-devbox
 
 ## What is it?
-What started as a development container environment for my web server,
-became a production container for my web server.
+A development environment consisting of Dsnmasq working as a DNS server 
+and Httpd as webhost. The webhost can work as a combination of file server, 
+reverse proxy and Django server.
+
+## Versioned environment
+Both the configuration directory, hosted directory and DNS records can be
+versioned. Pass the git repo addresses and branches as environment variables,
+as described in `stack.sample.env`.
 
 ## Why?
 It's a simple way of ensuring that dependencies and environments are the same
@@ -11,12 +17,12 @@ and Python version.
 
 ## File structure
 
-Defined in code:
-- `/srv/portfolio`: served directory
-- `/srv/config`: HTTPD config files
-- `/ssh`: Place for Github private key
-
-`/srv` and `/ssh` are marked as volumes in Dockerfile.
-
-Advised directories:
-- `/srv/certs`: An obvious place for SSL certificates
+- `./srv/webprojects`: served directory
+- `./srv/apache`: HTTPD config files
+- `./srv/certs`: An obvious place for SSL certificates
+- `./srv/ssh`: SSH folder for the webhost. Place your Github/Gitlab/Gitea 
+  private key here, if you intend to use private git repos. You can configure it 
+  by placing a `config` file here.
+- `./dnsmasq`: Should contain a `hosts` file and a `dnsmasq.d` directory. All 
+  files with extension `.conf` inside of `dnsmasq.d` will be included in the
+  Dnsmasq configuration.
