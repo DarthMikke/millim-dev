@@ -1,21 +1,27 @@
 version: "3.8"
 services:
   devbox:
-    image: millim.no/devbox:2.2.0-a7
+    image: container.millim.no/millim/webhost:2.2.0-a7
     env_file: "stack.env"
-    build: "./"
+    build: "webhost"
     volumes:
-      # - "/your/path/to/files:/srv/portfolio"
-      # - "/your/path/to/config/files:/srv/apache"
-      # - "/etc/certbot/live/example.com:/srv/certs"
-      # - "/home/user/.ssh:/ssh"  # Where you placed github.key
-      - "srv:/srv"
-      - "ssh:/ssh"
+      - "./srv/apache:/srv/apache"
+      - "./srv/webprojects:/srv/portfolio"
+      - "./srv/certs:/srv/certs"
+      - "./srv/ssh:/ssh"
     pull_policy: build
     restart: always
     ports:
-      - 80:80
-      - 443:443
-volumes:
-  srv:
-  ssh:
+      - "80:80"
+      - "443:443"
+  dns:
+    image: container.millim.no/millim/dnsmasq:0.2.0
+    env_file: "stack.env"
+    build:
+      context: dns
+      target: production
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    volumes:
+      - "./dnsmasq:/srv"

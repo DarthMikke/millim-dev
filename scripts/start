@@ -1,0 +1,27 @@
+#!/bin/bash
+
+docker-compose up -d || exit $?
+
+if [ `uname` != "Darwin "]; then
+	echo "Set your DNS address to 127.0.0.1 ."
+	exit
+fi
+
+echo "Attempting to set DNS server automatically to 127.0.0.1 ."
+
+# Find available networks with `networksetup -listallnetworkservices`
+NETWORK="Wi-Fi"
+
+echo ${NETWORK} > .macoslock
+
+# @link https://superuser.com/questions/1749552/change-primary-dns-server-from-cli-terminal-macos-monterey
+
+echo "Setting DNS server for ${NETWORK}"
+networksetup -setdnsservers ${NETWORK} empty
+networksetup -setdnsservers ${NETWORK} 127.0.0.1
+
+echo "Enter your password to flush DNS cache:"
+sudo dscacheutil -flushcache
+sudo killall -HUP mDNSResponder
+sleep 2
+echo macOS DNS Cache Reset

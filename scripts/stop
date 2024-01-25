@@ -1,0 +1,20 @@
+#!/bin/bash
+
+docker-compose down --remove-orphans
+
+if [ ! -f .macoslock ]; then
+exit
+fi
+
+echo "Resetting DNS configuration for $(cat .macoslock)"
+networksetup -setdnsservers $(cat .macoslock) empty
+
+rm .macoslock
+
+# @link https://apple.stackexchange.com/questions/288960/after-using-networksetup-setdnsservers-wi-fi-8-8-8-8-8-8-4-4-how-do-i-cle
+
+echo "Enter your password to flush DNS cache:"
+sudo dscacheutil -flushcache
+sudo killall -HUP mDNSResponder
+sleep 2
+echo macOS DNS Cache Reset
