@@ -14,3 +14,14 @@ services:
     ports:
       - "80:80"
       - "443:443"
+  dns:
+    image: container.millim.no/millim/dnsmasq:0.2.0
+    env_file: "stack.env"
+    build:
+      context: dns
+      target: production
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    volumes:
+      - "./dnsmasq:/srv"
