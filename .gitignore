@@ -1,4 +1,6 @@
 .DS_Store
-ssh/*
-!ssh/config
+dns
+dnsmasq
+webhost
+srv
 *.env
