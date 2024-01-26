@@ -26,3 +26,13 @@ and Python version.
 - `./dnsmasq`: Should contain a `hosts` file and a `dnsmasq.d` directory. All 
   files with extension `.conf` inside of `dnsmasq.d` will be included in the
   Dnsmasq configuration.
+
+## Troubleshooting on Mac
+
+Use a combination of these commands:
+- `dscacheutil -q host -a name example.com` [1]
+- `scutil --dns` [2]
+
+
+[1](https://superuser.com/questions/1400250/how-to-query-macos-dns-resolver-from-terminal)
+[2](https://apple.stackexchange.com/questions/98021/how-can-i-display-the-current-dns-servers-from-the-command-line-under-os-x)
