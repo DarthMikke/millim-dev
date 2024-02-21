@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   devbox:
-    image: container.millim.no/millim/webhost:2.2.0-a7
+    image: gitea.ts.millim.no/millim/webhost:2.2.0-a7
     container_name: devbox
     env_file: "stack.env"
     build: "webhost"
@@ -16,7 +16,7 @@ services:
       - "80:80"
       - "443:443"
   dns:
-    image: container.millim.no/millim/dnsmasq:1.2.1
+    image: gitea.ts.millim.no/millim/dnsmasq:0.2.1
     container_name: devbox_dns
     env_file: "stack.env"
     build:
