@@ -10,7 +10,9 @@ fi
 echo "Attempting to set DNS server automatically to 127.0.0.1 ."
 
 # Find available networks with `networksetup -listallnetworkservices`
-NETWORK="Wi-Fi"
+if [ -e $NETWORK ]; then
+	NETWORK="Wi-Fi"
+fi
 
 echo ${NETWORK} > .macoslock
 
