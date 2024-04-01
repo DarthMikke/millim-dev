@@ -2,7 +2,7 @@
 
 ## What is it?
 A development environment combining battle-proven Dsnmasq as a local DNS server 
-and Httpd as reliable webhost. You can take advantage of multitude httpd's
+and Httpd as reliable webhost. You can take advantage of httpd's multitude of 
 modules, with __mod_rewrite__, __mod_ssl__ and __mod_wsgi__ enabled by default.
 Thus the webhost can be a combination of file server, reverse proxy and
 WSGI for Flask and Django applications.
