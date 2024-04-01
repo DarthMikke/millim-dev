@@ -38,7 +38,7 @@ it assumes you use Wi-Fi. If you use a different network, set it as a `NETWORK`
 variable before running the script, e.g.:
 
 ```bash
-NETWORK=Ethernet; scripts/start
+export NETWORK=Ethernet; scripts/start
 ```
 
 If you struggle with getting the local DNS to work on MacOS, a combination
