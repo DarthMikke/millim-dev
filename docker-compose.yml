@@ -4,7 +4,7 @@ services:
     image: ghcr.io/darthmikke/webhost:2.2.0-a8
     container_name: devbox
     env_file: "stack.env"
-    build: "webhost"
+    # build: "webhost"
     volumes:
       - "./srv/apache:/srv/apache"
       - "./srv/webprojects:/srv/portfolio"
@@ -19,9 +19,9 @@ services:
     image: ghcr.io/darthmikke/docker-dnsmasq:1.2.1
     container_name: devbox_dns
     env_file: "stack.env"
-    build:
-      context: dns
-      target: production
+    # build:
+    #   context: dns
+    #   target: production
     ports:
       - "53:53/tcp"
       - "53:53/udp"
