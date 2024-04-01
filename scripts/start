@@ -2,7 +2,7 @@
 
 docker-compose up -d || exit $?
 
-if [ `uname` != "Darwin "]; then
+if [ `uname` != "Darwin" ]; then
 	echo "Set your DNS address to 127.0.0.1 ."
 	exit
 fi
