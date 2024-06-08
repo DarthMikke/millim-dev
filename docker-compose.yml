@@ -28,4 +28,4 @@ services:
     volumes:
       - "./dnsmasq:/srv"
 networks:
-  millim-proxy
+  millim-proxy:
